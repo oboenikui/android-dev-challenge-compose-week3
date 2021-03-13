@@ -18,19 +18,27 @@ package com.oboenikui.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.oboenikui.androiddevchallenge.ui.screen.HomeScreen
+import com.oboenikui.androiddevchallenge.ui.screen.LoginScreen
+import com.oboenikui.androiddevchallenge.ui.screen.WelcomeScreen
 import com.oboenikui.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
-            MyTheme {
-                MyApp()
+            val darkTheme = isSystemInDarkTheme()
+            MyTheme(darkTheme) {
+                MyApp(darkTheme)
             }
         }
     }
@@ -38,9 +46,20 @@ class MainActivity : AppCompatActivity() {
 
 // Start building your app here!
 @Composable
-fun MyApp() {
+fun MyApp(darkTheme: Boolean = false) {
+    val navController = rememberNavController()
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        NavHost(navController, startDestination = Screens.Welcome.route) {
+            composable(Screens.Welcome.route) {
+                WelcomeScreen(navController = navController, darkTheme)
+            }
+            composable(Screens.Login.route) {
+                LoginScreen(navController = navController)
+            }
+            composable(Screens.Home.route) {
+                HomeScreen()
+            }
+        }
     }
 }
 
