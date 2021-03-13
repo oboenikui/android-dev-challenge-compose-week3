@@ -92,6 +92,7 @@ private fun Login(darkTheme: Boolean = false, onClickLogin: () -> Unit = {}) {
                 )
             },
             value = loginId,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
             onValueChange = { loginId = it },
         )
         OutlinedTextField(

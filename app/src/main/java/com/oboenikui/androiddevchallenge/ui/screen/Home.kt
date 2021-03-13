@@ -203,12 +203,13 @@ private fun Home() {
                                     .width(144.dp)
                                     .height(140.dp)
                                     .padding(bottom = 4.dp, start = 4.dp, end = 4.dp),
-                                backgroundColor = MaterialTheme.colors.surface,
+                                backgroundColor = MaterialTheme.colors.background,
                                 shape = MaterialTheme.shapes.small,
                                 border = null,
                             ) {
                                 Column(
                                     modifier = Modifier
+                                        .background(MaterialTheme.colors.surface)
                                         .clickable { },
                                     horizontalAlignment = Alignment.Start,
                                 ) {

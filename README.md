@@ -1,4 +1,4 @@
-# Week 3 UI (APAC)
+# Bloom
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
@@ -8,11 +8,12 @@
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
 
+You can see the design of the garden
 
 
 ## :bulb: Motivation and Context
 
-`#AndroidDevWakeUpChallenge` of this week is difficult for me
+The design matches the sample almost perfectly.
 
 
 ## :camera_flash: Screenshots
