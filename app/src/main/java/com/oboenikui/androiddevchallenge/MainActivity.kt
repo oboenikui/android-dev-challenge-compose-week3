@@ -16,9 +16,8 @@
 package com.oboenikui.androiddevchallenge
 
 import android.R
-import android.os.Build
 import android.os.Bundle
-import android.view.WindowManager
+import android.view.View
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -33,15 +32,10 @@ import com.oboenikui.androiddevchallenge.ui.screen.HomeScreen
 import com.oboenikui.androiddevchallenge.ui.screen.LoginScreen
 import com.oboenikui.androiddevchallenge.ui.screen.WelcomeScreen
 import com.oboenikui.androiddevchallenge.ui.theme.MyTheme
-import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
-
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         setContent {
             val darkTheme = isSystemInDarkTheme()
